@@ -42,7 +42,9 @@ def main():
 
 
 class Point(object):
+    """ Represents a 2D point in x y space. """
     def __init__(self, x, y):
+        """" Constructs a new Point located at teh given x y. """
         self.x = x
         self.y = y
         self.move = 0
@@ -51,12 +53,18 @@ class Point(object):
         self.distance = 0
 
     def __repr__(self):
+        """" Returns a string that represents the point. """
+        # Method 1:
+        # return "Point(" + str(self.x) + ", " + str(self.y) + ")"
+        # Method 2:
         return 'Point({}, {})'.format(self.x, self.y)
 
     def clone(self):
+        """ Creates and returns a new Point at the same x y as itself. """
         return Point(self.x, self.y)
 
     def move_to(self, x, y):
+        """ Moves this point to the new x y position. """
         dx = x - self.x
         dy = y - self.y
         self.x = x
